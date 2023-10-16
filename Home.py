@@ -194,6 +194,8 @@ In addition, we provide ML-predicted characterization of IR vibrations (CO_free_
     tmp_df = pd.Series(tmp_dict).to_frame().transpose()
 
     props["E"], props["CO_free_W"], props["Tm_ss"] = predictor.predict(tmp_df)[0]
+    if props["E"] < 1:
+        props["E"] = 1.0 #[ props["E"] < 1 ] = 1.
     st.session_state["props"].update(props)
 
     with total1:
@@ -254,6 +256,7 @@ def page_Design():
         with c2:
             if len(edited) > 0:
                 outputs = predictor.predict(edited[input_cols])
+                outputs[ outputs[:,0] < 1 ,0] = 1.0
                 new_data = pd.DataFrame(outputs,columns=output_cols)
                 st.dataframe( new_data )
 
