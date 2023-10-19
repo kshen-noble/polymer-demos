@@ -23,7 +23,7 @@ import sklearn.neighbors
 # Formatting
 
 # Start
-#st.set_page_config(page_title="Dashboard",page_icon="⚛",layout="wide")
+st.set_page_config(page_title="Dashboard",page_icon="⚛",layout="wide")
 #https://discuss.streamlit.io/t/using-custom-fonts/14005 
 t = st.radio("Toggle to see font change", [True, False])
 
