@@ -20,9 +20,34 @@ import mychem
 import shap
 import sklearn.neighbors
 
-st.set_page_config(page_title="Dashboard",page_icon="⚛",layout="wide")
+# Formatting
+
+# Start
+#st.set_page_config(page_title="Dashboard",page_icon="⚛",layout="wide")
+#https://discuss.streamlit.io/t/using-custom-fonts/14005 
+t = st.radio("Toggle to see font change", [True, False])
+
+if t:
+    st.markdown(
+    """
+<style>
+            @import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+
+            html, body, [class*="css"] {
+                font-family: 'Inter'; 
+            }
+</style>
+    """,
+        unsafe_allow_html=True,
+    )
+
+"# Hello"
+
+"""This font will look different, based on your choice of radio button"""
+
 st.header("Polyurethane Design")
 st.markdown("##")
+
 
 # ====== Todo
 # Add save design
@@ -89,7 +114,7 @@ predictor = st.session_state["model"]
 
 
 #side bar
-st.sidebar.image("data/Dark_Blue_Vertical.png",caption="NobleAI <> Internal")
+st.sidebar.image("data/NobleAI_Logo_Reactor_Blk-Blu.png",caption="NobleAI <> Internal")
 
 
 def page_Charting():
