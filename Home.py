@@ -25,9 +25,9 @@ import sklearn.neighbors
 # Start
 st.set_page_config(page_title="Dashboard",page_icon="⚛",layout="wide")
 #https://discuss.streamlit.io/t/using-custom-fonts/14005 
-t = st.radio("Toggle to see font change", [True, False])
+#t = st.radio("Toggle to see font change", [True, False])
 
-if t:
+if True:
     st.markdown(
     """
 <style>
@@ -41,9 +41,8 @@ if t:
         unsafe_allow_html=True,
     )
 
-"# Hello"
-
-"""This font will look different, based on your choice of radio button"""
+#"# Hello"
+#"""This font will look different, based on your choice of radio button"""
 
 st.header("Polyurethane Design")
 st.markdown("##")
