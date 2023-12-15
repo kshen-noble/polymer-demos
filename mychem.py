@@ -28,7 +28,7 @@ def generate_diol(nO,nCO2,nCO3,nC,nCH3):
             smiles += functional_groups[ii]
 
     #smiles = '*'+smiles+'*'
-    smiles = "O" + smiles + "O"
+    smiles = "O" + smiles + "CO"
     return smiles
 
 
